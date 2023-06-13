@@ -1,0 +1,53 @@
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss" as m;
+.chatComponent {
+    display: flex;
+    // max-height: 100vh;
+    // height: 100vh;
+    // overflow: scroll;
+    border: 3px solid v.$black;
+    background-color: v.$white;
+    // @include m.dropShadow;
+    box-shadow: 8px 7px 0px v.$black;
+    width: 95%;
+    max-height: 95vh;
+    min-height: 95vh;
+    margin: 0 auto;
+    // margin-top: 2.5vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left {
+    width: 200px;
+    // border-right: 1px solid v.$black;
+    @include m.dropShadow;
+}
+
+.right {
+    max-height: 100%;
+    width: calc(100% - 200px);
+}
+
+.chatTopBar {
+    border-bottom: 2px solid v.$black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        height: 100%;
+        // border: 1px solid black;
+        line-height: 30px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+}
+
+.chat {
+    max-height: 100%;
+    height: calc(100% - 40px);
+    max-width: 100%;
+    // padding: 30px;
+    padding-top: 0;
+}

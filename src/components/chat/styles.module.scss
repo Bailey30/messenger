@@ -1,0 +1,31 @@
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss" as m;
+.inputSection {
+    padding: 15px 30px;
+    background-color: v.$blue;
+}
+
+.inputContainer {
+    width: 100%;
+    height: 25px;
+    border: 2px solid black;
+    display: flex;
+    border-radius: 5vh;
+    height: 40px;
+    background-color: v.$white;
+    input {
+        border-radius: 50vw;
+        width: 100%;
+        margin: 0 auto;
+        border: none;
+        padding: 10px;
+        &:focus {
+            outline: none;
+        }
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        margin-right: 20px;
+    }
+}

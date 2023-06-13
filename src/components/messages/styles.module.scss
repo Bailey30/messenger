@@ -1,0 +1,97 @@
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss" as m;
+.messagesContainer {
+    max-height: calc(100% - 70px);
+    height: 100%;
+    max-width: 100%;
+    // margin-bottom: 30px;
+    overflow-y: scroll;
+    overflow-anchor: none;
+    padding-top: 10px;
+    border-bottom: 2px solid v.$black;
+    padding: 5px 30px 0px;
+    // box-sizing: border-box;
+    // border: 1px solid red;
+    &::-webkit-scrollbar {
+        width: 20px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        border-left: 2px solid v.$black;
+        border-top: none;
+        border-bottom: none;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        // background: v.$black;
+        border-top: 2px solid v.$black;
+        border-bottom: 2px solid v.$black;
+    }
+}
+
+.overflowAnchor {
+    overflow-anchor: auto;
+    height: 1px;
+}
+
+.messageList {
+    list-style: none;
+}
+
+.message {
+    text-align: left;
+    margin-bottom: 20px;
+    .messageTop {
+        display: flex;
+    }
+    .imageContainer {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 2px solid v.$black;
+        @include m.dropShadow;
+    }
+    .messageTop {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .messageContent {
+        border: 2px solid v.$black;
+        @include m.dropShadow;
+        padding: 10px;
+        padding-bottom: 15px;
+        margin-left: 10px;
+        border-radius: 10px;
+        max-width: calc(100% - 264px);
+        width: fit-content;
+        overflow-wrap: break-word;
+    }
+    .timestamp {
+        font-size: 14px;
+        color: grey;
+    }
+    &.left {
+        .messageContent {
+            background-color: v.$yellow;
+        }
+        .timestamp {
+            margin-left: 62px;
+        }
+    }
+    &.right {
+        margin-left: auto;
+        margin-right: 10px;
+        text-align: right;
+        .messageTop {
+            flex-direction: row-reverse;
+        }
+        .messageContent {
+            margin-left: 0px;
+            margin-right: 10px;
+            background-color: v.$green;
+        }
+        .timestamp {
+            margin-right: 62px;
+        }
+    }
+}

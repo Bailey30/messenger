@@ -1,0 +1,13 @@
+@use "../styles/variables.scss" as v;
+@mixin dropShadow {
+    box-shadow: 1px 2px 0px v.$black;
+}
+
+@mixin button {
+    cursor: pointer;
+    background-color: none;
+    display: block;
+    border: 2px solid v.$black;
+    @include dropShadow;
+    border-radius: 10px;
+}
